@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `customPizza`;
 DROP TABLE IF EXISTS `preDefinedPizza`;
 DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `orderDetails`;
+DROP TABLE IF EXISTS 'ourpizza';
 
 
 CREATE TABLE `address`
@@ -139,6 +140,27 @@ create table `orderDetails`
    FOREIGN KEY (`ordersId`) REFERENCES `orders` (`ordersId`),
    FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`)
 );
+
+
+create table ourpizza
+(
+id  int(4) not null auto_increment,
+pizza_name varchar(200) not null,
+pizza_description varchar(250) not null,
+pizza_cals varchar (50) not null,
+primary key(id)
+);
+
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("Hawaiian Pizza", "Succulent pineapple and slices of ham topped with an extra layer of cheeese...", "210-310 per slice");
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("Pepperoni Pizza", "Classic Pepperoni pizza with an extra layer of cheese...","210-310 per slice");
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("BBQ Chicken Pizza", "Our Signature pizza smotherd in flavorful BBQ sauce and topped with fresh BBQ Chicken...","210-310 per slice");
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("Canadian Pizza", "Classic Canadian pizza with mushrooms bacon pepperoni and topped with an extra layer of cheeese...","210-310 per slice");
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("Smokey Maple Bacon Pizza", "Pizza topped with Fresh smoked maple bacon and an extra layer of cheeese...","210-310 per slice");
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("Meat Lovers Pizza", "Bacon, Sausage, Ham, Pepperoni, Chicken, our all Meat Lovers Pizza","310-610 per slice");
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("Supreme Pizza", "Sausage, pepperoni, mushrooms, olives, peppers, and onions on your favourite Supreme Pizza!","310-610 per slice");
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("Vegeterian Pizza", "Covered With Feta, provolone, cheddar, parmesan-asiago and mozzarella cheese finished with a sprinkle of oregano","210-310 per slice");
+insert into ourpizza (pizza_name, pizza_description, pizza_cals) VALUES ("4 Cheese Pizza", "Mozzarella cheese, Fontina Cheese, Parmesan Cheese and feta cheese for your favourite 4 Cheese Pizza!","310-610 per slice");
+
 
 
 
